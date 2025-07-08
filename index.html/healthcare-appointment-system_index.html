@@ -4,88 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clinic Appointment Scheduler</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
-      min-height: 100vh;
-    }
-    header {
-      text-align: left;
-      padding: 32px 0 24px 48px;
-      background: #2d3e50;
-      color: #fff;
-      border-bottom: 4px solid #4fc3f7;
-      letter-spacing: 1px;
-      box-shadow: 0 2px 8px rgba(44,62,80,0.08);
-    }
-    .container {
-      max-width: 420px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 32px 28px 24px 28px;
-      border-radius: 18px;
-      box-shadow: 0 4px 24px rgba(44,62,80,0.10);
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-    input, select {
-      padding: 12px 10px;
-      font-size: 15px;
-      border: 1px solid #b0bec5;
-      border-radius: 6px;
-      background: #f7fafc;
-      transition: border 0.2s;
-    }
-    input:focus, select:focus {
-      border: 1.5px solid #4fc3f7;
-      outline: none;
-      background: #fff;
-    }
-    button {
-      background: linear-gradient(90deg, #4fc3f7 0%, #1976d2 100%);
-      color: #fff;
-      border: none;
-      padding: 12px;
-      border-radius: 6px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(33,150,243,0.08);
-      transition: background 0.2s;
-    }
-    button:hover {
-      background: linear-gradient(90deg, #1976d2 0%, #4fc3f7 100%);
-    }
-    .error {
-      color: #d32f2f;
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
-    #appointments {
-      margin-top: 28px;
-    }
-    .appointment {
-      border-left: 4px solid #4fc3f7;
-      background: #f7fafc;
-      padding: 14px 16px;
-      margin: 14px 0;
-      border-radius: 7px;
-      box-shadow: 0 1px 4px rgba(44,62,80,0.04);
-    }
-    .appointment strong {
-      color: #1976d2;
-    }
-    @media (max-width: 600px) {
-      .container { padding: 12px; }
-      header { padding-left: 16px; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -97,7 +16,7 @@
       <label for="patientName">Full Name</label>
       <input type="text" id="patientName" placeholder="e.g. Ashley Bane" required>
       <label for="patientEmail">Email</label>
-      <input type="email" id="patientEmail" placeholder="e.g. Jasmine@email.com" required>
+      <input type="email" id="patientEmail" placeholder="e.g. Jasmine@email.c      A modern web app for booking and viewing clinic appointments. Built with HTML, CSS, and JavaScript.om" required>
       <label for="doctor">Doctor</label>
       <div style="display: flex; gap: 18px; margin-bottom: 8px;">
         <label style="display: flex; align-items: center; cursor: pointer; gap: 8px;">
@@ -119,59 +38,6 @@
     </form>
     <div id="appointments"></div>
   </div>
-  <script>
-    // Appointment form logic
-    const form = document.getElementById('bookingForm');
-    const appointmentsDiv = document.getElementById('appointments');
-
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-      const name = document.getElementById('patientName').value.trim();
-      const email = document.getElementById('patientEmail').value.trim();
-      const doctor = document.querySelector('input[name="doctor"]:checked')?.value;
-      const date = document.getElementById('appointmentDate').value;
-
-      if (!name || !email || !doctor || !date) {
-        appointmentsDiv.innerHTML = '<p class="error">All fields are required.</p>';
-        return;
-      }
-
-      const appointment = { name, email, doctor, date };
-      let appointments = [];
-      try {
-        appointments = JSON.parse(localStorage.getItem('appointments')) || [];
-      } catch (e) {
-        appointments = [];
-      }
-      appointments.push(appointment);
-      localStorage.setItem('appointments', JSON.stringify(appointments));
-      showAppointments();
-      form.reset();
-      appointmentsDiv.innerHTML = '<p style="color:#388e3c; font-weight:500;">Appointment booked successfully!</p>';
-    });
-
-    function showAppointments() {
-      let appointments = [];
-      try {
-        appointments = JSON.parse(localStorage.getItem('appointments')) || [];
-      } catch (e) {
-        appointments = [];
-      }
-      if (!appointments.length) {
-        appointmentsDiv.innerHTML = '<p style="color:#789;">No appointments yet.</p>';
-        return;
-      }
-      appointmentsDiv.innerHTML = appointments.map(a =>
-        `<div class="appointment">
-          <div><strong>Name:</strong> ${a.name}</div>
-          <div><strong>Email:</strong> ${a.email}</div>
-          <div><strong>Doctor:</strong> ${a.doctor}</div>
-          <div><strong>Date:</strong> ${a.date}</div>
-        </div>`
-      ).join('');
-    }
-
-    window.onload = showAppointments;
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
