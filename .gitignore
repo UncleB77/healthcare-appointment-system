@@ -1,0 +1,49 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# VS Code settings
+.vscode/
+
+# Node.js dependencies (if you add npm packages in the future)
+node_modules/
+
+# Python virtual environments (if you use Python tools)
+venv/
+ENV/
+
+# Build output
+/dist/
+/build/
+
+# Misc
+*.tmp
+*.swp
+
+# Windows system files
+Desktop.ini
+$RECYCLE.BIN/
+
+# Ignore local environment files
+.env
+.env.*
+
+# Ignore by default any backup files
+*~
+*.bak
+
+# Ignore Mac system files
+.AppleDouble
+.LSOverride
+
+# Ignore npm debug log
+npm-debug.log*
+
+# Ignore coverage reports
+coverage/
+
+# Ignore package-lock if not using npm
+package-lock.json

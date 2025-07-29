@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinic Appointment Scheduler</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Clinic Appointment Scheduler</h1>
+    <p style="font-size: 1.1em; color: #b0bec5; margin-top: 8px;">Book your next visit with ease</p>
+  </header>
+  <div class="container">
+    <form id="bookingForm" autocomplete="off">
+      <label for="patientName">Full Name</label>
+      <input type="text" id="patientName" placeholder="e.g. Ashley Bane" required>
+      <label for="patientEmail">Email</label>
+      <input type="email" id="patientEmail" placeholder="e.g. Jasmine@email.com" required>
+      <label for="doctor">Doctor</label>
+      <div style="display: flex; gap: 18px; margin-bottom: 8px;">
+        <label style="display: flex; align-items: center; cursor: pointer; gap: 8px;">
+          <input type="radio" name="doctor" id="doctor-bala" value="Dr. Bala" required style="accent-color: #1976d2;">
+          <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f468-200d-2695-fe0f.png" alt="Dr. Bala" width="32" height="32" style="border-radius:50%;border:1.5px solid #b0bec5;background:#fff;">
+          Dr. Bala
+          <a href="https://example.com/dr-bala-profile" target="_blank" style="margin-left:6px;font-size:13px;color:#1976d2;text-decoration:underline;">Profile</a>
+        </label>
+        <label style="display: flex; align-items: center; cursor: pointer; gap: 8px;">
+          <input type="radio" name="doctor" id="doctor-jessica" value="Dr. Jessica" required style="accent-color: #1976d2;">
+          <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f469-200d-2695-fe0f.png" alt="Dr. Jessica" width="32" height="32" style="border-radius:50%;border:1.5px solid #b0bec5;background:#fff;">
+          Dr. Jessica
+          <a href="https://example.com/dr-jessica-profile" target="_blank" style="margin-left:6px;font-size:13px;color:#1976d2;text-decoration:underline;">Profile</a>
+        </label>
+      </div>
+      <label for="appointmentDate">Date</label>
+      <input type="date" id="appointmentDate" required>
+      <button type="submit">Book Appointment</button>
+    </form>
+    <button id="clearBtn" type="button">Clear Display</button>
+    <div id="appointments"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
