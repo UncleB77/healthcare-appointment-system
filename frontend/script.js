@@ -60,4 +60,8 @@ async function showAppointments() {
   }
 }
 
+document.getElementById('clearBtn').onclick = () => {
+  document.getElementById('appointments').innerHTML = '';
+}
+
 window.onload = showAppointments;

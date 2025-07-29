@@ -13,6 +13,9 @@ app.use(express.json());
 const PORT = process.env.PORT || 5000;
 
 // Routes
+// const appointmentRoutes = require('./routes/appointmentRoutes');
+//app.use('/api/appointments', appointmentRoutes);
+
 app.use('/api/appointments', require('./routes/appointments'));
 
 // MongoDB connection
