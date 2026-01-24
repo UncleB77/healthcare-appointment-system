@@ -49,9 +49,4 @@ You can view the app by opening `index.html/healthcare-appointment-system_index.
 ## 📌 Notes
 This project is a **learning + capability demonstration** and not a production system.
 
-## License
-This project is open source and available under the MIT License.
-
----
-
 Feel free to contribute or suggest improvements!
