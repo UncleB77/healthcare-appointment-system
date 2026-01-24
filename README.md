@@ -1,12 +1,34 @@
-# Clinic Appointment Scheduler
+# Healthcare Appointment System
 
-A simple, modern web application for booking and viewing clinic appointments. Built with HTML, CSS, and JavaScript. Appointments are stored in your browser's local storage.
+A full-stack healthcare appointment booking system built to demonstrate
+real-world application logic and backend integration.
 
-## Features
-- Book appointments with Dr. Bala or Dr. Jessica
-- View all booked appointments
-- Responsive and user-friendly design
-- Doctor profile links and avatars
+---
+
+## 🧠 Purpose
+This project demonstrates my ability to:
+- Design real-world workflows
+- Work with backend APIs
+- Manage application state and data
+- Build beyond static websites
+
+---
+
+## ⚙️ Features
+- Appointment booking
+- Admin management
+- MongoDB data storage
+- Node.js & Express backend
+
+---
+
+## 🛠️ Tech Stack
+- HTML, CSS, JavaScript
+- Node.js
+- Express
+- MongoDB
+
+---
 
 ## How to Use
 1. Fill in your name and email.
@@ -17,20 +39,15 @@ A simple, modern web application for booking and viewing clinic appointments. Bu
 ## Demo
 You can view the app by opening `index.html/healthcare-appointment-system_index.html` in your browser.
 
-## Project Structure
-```
-healthcare-appointment-system/
-├── index.html/
-│   └── healthcare-appointment-system_index.html
-├── README.md
-├── .gitignore
-└── README.md/
-    └── healthcare system.txt
-```
 
 ## Customization
 - To add more doctors, edit the HTML and update the doctor section.
 - To deploy online, use GitHub Pages or any static hosting service.
+
+---
+
+## 📌 Notes
+This project is a **learning + capability demonstration** and not a production system.
 
 ## License
 This project is open source and available under the MIT License.
